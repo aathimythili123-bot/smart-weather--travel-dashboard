@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Weather & Travel Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-sky="clear">
+  <main class="app">
+    <header>
+      <h1>Where are you headed?</h1>
+      <form id="search-form" novalidate>
+        <label for="city" class="sr">City name</label>
+        <input id="city" type="search" placeholder="Search a city, e.g. Chennai" autocomplete="off" required>
+        <button type="submit">Check weather</button>
+      </form>
+      <div id="recent" class="recent" aria-label="Recent searches"></div>
+    </header>
+
+    <p id="status" role="status" aria-live="polite"></p>
+
+    <section id="result" hidden>
+      <article class="current">
+        <div class="icon" id="icon" aria-hidden="true"></div>
+        <div>
+          <h2 id="place"></h2>
+          <p class="temp" id="temp"></p>
+          <p id="summary"></p>
+          <p class="meta" id="meta"></p>
+        </div>
+      </article>
+
+      <section aria-labelledby="fh">
+        <h3 id="fh">5-day forecast</h3>
+        <ul id="forecast" class="forecast"></ul>
+      </section>
+
+      <section aria-labelledby="th">
+        <h3 id="th">Travel suggestions</h3>
+        <ul id="tips" class="tips"></ul>
+      </section>
+    </section>
+  </main>
+  <footer>Data: <a href="https://open-meteo.com/">Open-Meteo</a></footer>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
